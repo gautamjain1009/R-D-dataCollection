@@ -1,0 +1,7 @@
+<launch>     
+
+    <include file="$(find hps_camera)/ros/launch/hps_camera.launch" />
+    <include file="$(find my_camera)/launch/elp.launch" />
+
+
+</launch>

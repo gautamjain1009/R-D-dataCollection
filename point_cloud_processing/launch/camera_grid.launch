@@ -1,0 +1,34 @@
+<launch>
+<!--
+    <arg name="camera_ns"/>
+    
+    <group ns="$(arg camera_ns)">
+        <include file="$(find hps_camera)/ros/launch/hps_camera.launch">
+            <arg name="namespace" value="$(arg camera_ns)" /> 
+        </include>
+    </group>
+
+    <include file="$(find hps_camera)/ros/launch/hps_camera.launch">
+        <arg name="camera_ns" value="c1" /> 
+    </include>
+
+    <include file="$(find hps_camera)/ros/launch/hps_camera.launch">
+        <arg name="camera_ns" value="c2" /> 
+    </include>
+-->
+     <!--<include ns="c1" file="$(find hps_camera)/ros/launch/hps_camera.launch"/>
+     <include ns="c2" file="$(find hps_camera)/ros/launch/hps_camera.launch"/>-->
+     
+
+<group ns='ns1'>
+    
+    <include file="$(find hps_camera)/ros/launch/hps_camera.launch">
+    </include>
+</group>
+
+<group ns="ns2">
+    <include file="$(find hps_camera)/ros/launch/hps_camera.launch">
+    <param name="cameraNumber" value="1" type="int" />
+    </include>
+</group>
+</launch>
