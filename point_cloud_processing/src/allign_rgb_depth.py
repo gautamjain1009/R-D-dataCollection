@@ -5,8 +5,8 @@ import numpy as np
 import sys
 import glob
 import os
-
-
+# from operator import itemgetter       
+import natsort 
 def onMouse(event, x,y,flags,param):
     """
     Mouse callback gives the position of the mouse when mouse is pressed.
@@ -36,13 +36,17 @@ def save_image(h,path_directory,path_save_image):
     """
 
     index = 0
-    for path in os.listdir(path_directory):
+    list_files = os.listdir(path_directory)
+    list_files = natsort.natsorted(list_files,reverse =False)
+    for path in list_files:
         full_path = os.path.join(path_directory, path)
+        print(full_path)
         if os.path.isfile(full_path):
             image = cv2.imread(full_path)
             warped_image = allign_warp(h,image)
             # print(warped_image.shape)
             index = index +1 
+            # print(index)
             cv2.imwrite( path_save_image + str(index) + ".png",warped_image)
     
 if __name__ == '__main__':
@@ -73,8 +77,8 @@ if __name__ == '__main__':
     
     # print("Homography matrix: ", h)
 
-    d = "/home/gautam/Documents/MAS_DOCS/R-D_approaches/hypersen_dataset/RGB"
-    save = "/home/gautam/Documents/MAS_DOCS/R-D_approaches/hypersen_dataset/allign_RGB/alligned_rgb"
+    d = "/home/gautam/Documents/MAS_DOCS/R-D_approaches/hypersen_dataset/evaluation_dataset/bigger_RGB"
+    save = "/home/gautam/Documents/MAS_DOCS/R-D_approaches/hypersen_dataset/evaluation_dataset/resized_alligned_RGB/alligned_rgb_"
     save_image(h,d,save)
 
     print("All the images are alligned and saved")

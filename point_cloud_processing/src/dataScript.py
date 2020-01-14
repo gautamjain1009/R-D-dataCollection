@@ -26,9 +26,9 @@ class synchronizer:
         # self.pub_Cam_Info = rospy.Publisher('camera_info_sync', CameraInfo, queue_size=1)
         # self.pub_Lidar = rospy.Publisher('rslidar_points_sync', PointCloud2, queue_size=1)
 
-
         self.imageInput = message_filters.Subscriber('/image_raw', SesnorImage)
         self.depthInput = message_filters.Subscriber('/hps_camera/depth/image', SesnorImage)
+
         # self.cameraInfo = message_filters.Subscriber('/camera_info', CameraInfo)
         # self.lidar = message_filters.Subscriber('/hps_camera/depth/points', PointCloud2)
 
@@ -67,12 +67,12 @@ class synchronizer:
         # depth_image_stamp = self._image_depth.header.stamp + ".png"
 
         #### RGB Image
-        RGB_name = "/home/gautam/Documents/MAS_DOCS/R-D_approaches/hypersen_dataset/RGB/RGB_image" + str(self.index) + ".png"
+        RGB_name = "/home/gautam/Documents/MAS_DOCS/R-D_approaches/realsense_dataset/RGB/RGB_image_" + str(self.index) + ".png"
         self.ros_image2_rgbimage(self._image_raw,RGB_name)
         
         
         #### depth_image
-        depth_name = "/home/gautam/Documents/MAS_DOCS/R-D_approaches/hypersen_dataset/Depth/depth_image" + str(self.index) + ".png"
+        depth_name = "/home/gautam/Documents/MAS_DOCS/R-D_approaches/realsense_dataset/Depth/depth_image_" + str(self.index) + ".png"
         self.ros_image2_rgbimage(self._image_depth,depth_name)
         
         # self.ros_pcl_cloud(rslidar_points)
