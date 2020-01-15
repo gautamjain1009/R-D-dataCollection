@@ -4,8 +4,8 @@ This repository contains the dataset collection scripts for R&D project for dept
 1. [Dependency](#dependency)
 0. [Data](#data)
 0. [Commands](#commands)
-0. [Envrionment for Evaluated Approaches](#Envrionment for Evaluated Approaches)
-0. [Report for the research project](#Report for the research project)
+0. [Envrionment Specification](#envrionment specification)
+0. [Report](#report)
 
 
 ## Dependency
@@ -70,12 +70,12 @@ rosrun point_cloud_processing data_script_realsense.py
 python resized_allign_dataset.py 
 ```
 
-## Envrionment for Evaluated Approaches
+## Envrionment Specifications
 I can not create a comman script or an environemtn for all the approaches together as the dependencies are different and comman dependencies are in different versions.
 
 - The specifications files can be found in (https://github.com/gautamjain1009/R-D-dataCollection) under `R-D-dataCollection/Environment_specifiaction_files`.
 
-## Report for the research project. 
+## Report
 
 - [Report](https://github.com/gautamjain1009/R-D-dataCollection/tree/master/report) 
 
