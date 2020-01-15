@@ -4,7 +4,7 @@ This repository contains the dataset collection scripts for R&D project for dept
 1. [Dependency](#dependency)
 0. [Data](#data)
 0. [Commands](#commands)
-0. [Envrionment Specification](#envrionment specification)
+0. [Envrionment Specifications](#envrionment specifications)
 0. [Report](#report)
 
 
